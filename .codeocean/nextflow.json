@@ -1,0 +1,40 @@
+{
+	"version": 1,
+	"processes": [
+		{
+			"name": "capsule_aind_disrnn_dispatcher_1",
+			"capsule": {
+				"id": "3dcc1e97-6f2c-44bc-8b0e-4b715559b4a4",
+				"name": "aind-disrnn-dispatcher",
+				"slug": "7242130"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			}
+		},
+		{
+			"name": "capsule_aind_disrnn_wrapper_2",
+			"capsule": {
+				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
+				"name": "aind-disrnn-wrapper",
+				"slug": "5421561"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "2f8fDLym45dTDjQ3",
+					"source_id": "capsule_aind_disrnn_dispatcher_1",
+					"type": "capsule",
+					"name": "aind-disrnn-dispatcher"
+				}
+			],
+			"results": {
+				"id": "0d294d22-89c8-463b-821b-9690a18833bd"
+			}
+		}
+	]
+}
