@@ -1,5 +1,7 @@
 {
 	"version": 1,
-	"nextflow_version": "24.10.4",
+	"nextflow_version": "22.10.8",
+	"no_cache": true,
+	"spot": true,
 	"verbose_logs": true
 }

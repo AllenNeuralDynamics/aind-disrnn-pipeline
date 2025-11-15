@@ -7,8 +7,9 @@
 				"id": "3dcc1e97-6f2c-44bc-8b0e-4b715559b4a4",
 				"name": "aind-disrnn-dispatcher",
 				"slug": "7242130",
-				"commit": "cd034402eecdf56e9a866c48a64d3e708cd33a85",
-				"image_tag": "efbcdd4123fe89272ae85b6c612d292d"
+				"commit": "4025253dea049afa80ec732016adaa8d9ba02543",
+				"image_tag": "efbcdd4123fe89272ae85b6c612d292d",
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 1,
