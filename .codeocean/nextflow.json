@@ -18,15 +18,15 @@
 		{
 			"name": "capsule_aind_disrnn_wrapper_2",
 			"capsule": {
-				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
+				"id": "7e3629e9-2e46-46b6-81b9-11b4e64899b2",
 				"name": "aind-disrnn-wrapper",
-				"slug": "5421561",
-				"commit": "827562511ca432b7b18c8c24e143ed4e05486d50",
-				"image_tag": "cf025396d7b4b395fe388957ab0f5740"
+				"slug": "1781932",
+				"version": 1
 			},
 			"resources": {
 				"cpus": 16,
-				"memory": 61
+				"memory": 61,
+				"gpus": 1
 			},
 			"inputs": [
 				{

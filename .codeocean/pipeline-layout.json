@@ -60,19 +60,19 @@
 				"x": 838.633962323112,
 				"y": -87.33587635171048
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
 			"data": {
-				"capsule_id": "0d294d22-89c8-463b-821b-9690a18833bd"
+				"capsule_id": "7e3629e9-2e46-46b6-81b9-11b4e64899b2"
 			},
 			"id": "capsule_aind_disrnn_wrapper_2",
 			"position": {
 				"x": 834.8375614796295,
 				"y": 250.17467484178576
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -121,10 +121,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1763411692671,
+	"timestamp": 1763412989789,
 	"viewport": {
-		"x": -230.13396232311197,
-		"y": 368.83587635171045,
+		"x": -326.133962323112,
+		"y": 219.83587635171045,
 		"zoom": 1
 	}
 }

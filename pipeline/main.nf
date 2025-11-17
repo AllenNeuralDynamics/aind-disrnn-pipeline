@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:2166b1039212194ea4bf29684aab9e96dadba16abd787157b88e73dbbcb1f560
+// hash:sha256:0041346bf6608b3d14c0f6bdd3e564d1adba5570a652ae3977bd553e705518c6
 
 // capsule - aind-disrnn-dispatcher
 process capsule_aind_disrnn_dispatcher_1 {
@@ -46,11 +46,13 @@ process capsule_aind_disrnn_dispatcher_1 {
 
 // capsule - aind-disrnn-wrapper
 process capsule_aind_disrnn_wrapper_2 {
-	tag 'capsule-5421561'
-	container "$REGISTRY_HOST/capsule/0d294d22-89c8-463b-821b-9690a18833bd:cf025396d7b4b395fe388957ab0f5740"
+	tag 'capsule-1781932'
+	container "$REGISTRY_HOST/published/7e3629e9-2e46-46b6-81b9-11b4e64899b2:v1"
 
 	cpus 16
 	memory '61 GB'
+	accelerator 1
+	label 'gpu'
 
 	publishDir "$RESULTS_PATH/$index", saveAs: { filename -> new File(filename).getName() }
 
@@ -66,7 +68,7 @@ process capsule_aind_disrnn_wrapper_2 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=0d294d22-89c8-463b-821b-9690a18833bd
+	export CO_CAPSULE_ID=7e3629e9-2e46-46b6-81b9-11b4e64899b2
 	export CO_CPUS=16
 	export CO_MEMORY=65498251264
 
@@ -83,11 +85,10 @@ process capsule_aind_disrnn_wrapper_2 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5421561.git" capsule-repo
+		git clone --filter=tree:0 --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1781932.git" capsule-repo
 	else
-		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5421561.git" capsule-repo
+		git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1781932.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 827562511ca432b7b18c8c24e143ed4e05486d50 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
