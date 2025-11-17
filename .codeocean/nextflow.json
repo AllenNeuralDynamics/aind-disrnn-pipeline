@@ -22,7 +22,7 @@
 				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
 				"name": "aind-disrnn-wrapper",
 				"slug": "5421561",
-				"commit": "5006353f1ea7ccf72dc15e342f8c6d751b39bccb",
+				"commit": "827562511ca432b7b18c8c24e143ed4e05486d50",
 				"image_tag": "cf025396d7b4b395fe388957ab0f5740"
 			},
 			"resources": {
