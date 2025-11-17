@@ -7,16 +7,87 @@
 				"id": "3dcc1e97-6f2c-44bc-8b0e-4b715559b4a4",
 				"name": "aind-disrnn-dispatcher",
 				"slug": "7242130",
-				"commit": "4025253dea049afa80ec732016adaa8d9ba02543",
+				"commit": "bb441df7bbfa8fb1b786771e47d3bf6c0c95b44a",
 				"image_tag": "efbcdd4123fe89272ae85b6c612d292d",
 				"app_panel": true
 			},
 			"resources": {
 				"cpus": 1,
 				"memory": 8
+			}
+		},
+		{
+			"name": "capsule_aind_disrnn_wrapper_2",
+			"capsule": {
+				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
+				"name": "aind-disrnn-wrapper",
+				"slug": "5421561",
+				"commit": "5006353f1ea7ccf72dc15e342f8c6d751b39bccb",
+				"image_tag": "cf025396d7b4b395fe388957ab0f5740"
 			},
+			"resources": {
+				"cpus": 16,
+				"memory": 61,
+				"gpus": 1
+			},
+			"inputs": [
+				{
+					"id": "2GxUTt6AOpyEKTgE",
+					"source_id": "76fc65d3-eec4-4578-a20d-499193fc920e",
+					"type": "dataset",
+					"name": "disrnn_dataset_778077",
+					"source_path": "disrnn_dataset_778077/",
+					"target_path": "disrnn_dataset_778077",
+					"collect": true
+				},
+				{
+					"id": "KaWzJ8LO7lNhxIBy",
+					"source_id": "ad5ec889-f4e0-45a2-802c-f843266d3cce",
+					"type": "dataset",
+					"name": "disrnn_dataset_774212",
+					"source_path": "disrnn_dataset_774212/",
+					"target_path": "disrnn_dataset_774212",
+					"collect": true
+				},
+				{
+					"id": "kRAJSd3bw41lakdh",
+					"source_id": "9788eb8d-ea88-4c60-bacc-1a23efd2f5e1",
+					"type": "dataset",
+					"name": "disrnn_dataset_781173",
+					"source_path": "disrnn_dataset_781173/",
+					"target_path": "disrnn_dataset_781173",
+					"collect": true
+				},
+				{
+					"id": "tMoL9lSFMkBtKRcS",
+					"source_id": "8eaa487e-e78c-4635-b24b-eabe680a55ae",
+					"type": "dataset",
+					"name": "disrnn_dataset_781162",
+					"source_path": "disrnn_dataset_781162/",
+					"target_path": "disrnn_dataset_781162",
+					"collect": true
+				},
+				{
+					"id": "iBEAqtLM81IQgLWj",
+					"source_id": "64fa1cb4-8af8-4d96-a965-3454d59439f6",
+					"type": "dataset",
+					"name": "disrnn_dataset_779531",
+					"source_path": "disrnn_dataset_779531/",
+					"target_path": "disrnn_dataset_779531",
+					"collect": true
+				},
+				{
+					"id": "JOn5GHxX3QOGkW5e",
+					"source_id": "capsule_aind_disrnn_dispatcher_1",
+					"type": "capsule",
+					"name": "aind-disrnn-dispatcher",
+					"target_path": "jobs",
+					"flatten": true
+				}
+			],
 			"results": {
-				"id": "3dcc1e97-6f2c-44bc-8b0e-4b715559b4a4"
+				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
+				"sequence_folders": true
 			}
 		}
 	]
