@@ -8,6 +8,15 @@ AIND-disRNN Dispatcher: [GitHub](https://github.com/AllenNeuralDynamics/aind-dis
 
 AIND-disRNN Wrapper: [GitHub](https://github.com/AllenNeuralDynamics/aind-disrnn-wrapper), [CO capsule](https://codeocean.allenneuraldynamics.org/capsule/5421561/tree?cw=true)
 
+## Credentials
+You'll need a W&B API key to push your results to W&B:
+1. Ask Han to invite you to the [AIND-disRNN team on W&B](https://wandb.ai/AIND-disRNN).
+2. Copy your API key from `W&B - Account - API key`
+3. First add your key to Code Ocean account: `Account - User Secrets - Add Secret - Custom key` <br>
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/f3f587b7-cacd-483f-817b-0d7e7a10c6a6" />
+4. Then attach the key to this pipeline: `Pipeline settings - Credentials` <br>
+   <img width="500" alt="image" src="https://github.com/user-attachments/assets/8ce8365a-24ca-4729-ba52-6c017da097fe" />
+5. You may also need to attach your Code Ocean API on the same page.
 
 ## Usage
 In the [pipeline](https://codeocean.allenneuraldynamics.org/capsule/7873787/tree), enter the Hydra CLI override in the app panel, for example<br>`-m model.penalties.beta=0.0001,0.001,0.01 model.training.n_steps=100 model.training.n_warmup_steps=50` 
