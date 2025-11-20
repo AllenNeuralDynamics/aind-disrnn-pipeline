@@ -2,13 +2,11 @@
 	"version": 2,
 	"processes": [
 		{
-			"name": "capsule_aind_disrnn_dispatcher_1",
+			"name": "capsule_rachel_aind_disrnn_dispatcher_1",
 			"capsule": {
-				"id": "3dcc1e97-6f2c-44bc-8b0e-4b715559b4a4",
-				"name": "aind-disrnn-dispatcher",
-				"slug": "7242130",
-				"commit": "72fec70cecfb8e3cb1bf4064c2be1dc617501fca",
-				"image_tag": "efbcdd4123fe89272ae85b6c612d292d",
+				"id": "87a76890-d14e-4f8c-b8c8-4ee0c3ed9910",
+				"name": "rachel-aind-disrnn-dispatcher",
+				"slug": "3092604",
 				"app_panel": true
 			},
 			"resources": {
@@ -17,13 +15,11 @@
 			}
 		},
 		{
-			"name": "capsule_aind_disrnn_wrapper_2",
+			"name": "capsule_rachel_aind_disrnn_wrapper_2",
 			"capsule": {
-				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
-				"name": "aind-disrnn-wrapper",
-				"slug": "5421561",
-				"commit": "1ed3a5d25629b048d7b5f8811978d3b1571e23de",
-				"image_tag": "1fefef25994fb7dfb862613018015a75"
+				"id": "b3b7a6af-76fe-4f30-ba15-e8255429f119",
+				"name": "rachel-aind-disrnn-wrapper",
+				"slug": "4484939"
 			},
 			"resources": {
 				"cpus": 16,
@@ -33,15 +29,15 @@
 			"inputs": [
 				{
 					"id": "JOn5GHxX3QOGkW5e",
-					"source_id": "capsule_aind_disrnn_dispatcher_1",
+					"source_id": "capsule_rachel_aind_disrnn_dispatcher_1",
 					"type": "capsule",
-					"name": "aind-disrnn-dispatcher",
+					"name": "rachel-aind-disrnn-dispatcher",
 					"target_path": "jobs",
 					"flatten": true
 				}
 			],
 			"results": {
-				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
+				"id": "b3b7a6af-76fe-4f30-ba15-e8255429f119",
 				"sequence_folders": true
 			}
 		}
