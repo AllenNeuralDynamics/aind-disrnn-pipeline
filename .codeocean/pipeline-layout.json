@@ -27,8 +27,8 @@
 			},
 			"id": "capsule_aind_disrnn_dispatcher_1",
 			"position": {
-				"x": 835.3792299976717,
-				"y": -95.87193069512207
+				"x": 836.1639628858868,
+				"y": -131.79586622176402
 			},
 			"selected": false,
 			"type": "capsule"
@@ -44,12 +44,57 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"id": "ad5ec889-f4e0-45a2-802c-f843266d3cce",
+			"position": {
+				"x": 590.087537660151,
+				"y": -241.2477711267068
+			},
+			"selected": false,
+			"type": "dataset"
+		},
+		{
+			"id": "76fc65d3-eec4-4578-a20d-499193fc920e",
+			"position": {
+				"x": 475.126137030838,
+				"y": -114.1000472692965
+			},
+			"selected": false,
+			"type": "dataset"
+		},
+		{
+			"id": "64fa1cb4-8af8-4d96-a965-3454d59439f6",
+			"position": {
+				"x": 436.0179712278046,
+				"y": 2.1164556855248193
+			},
+			"selected": false,
+			"type": "dataset"
+		},
+		{
+			"id": "8eaa487e-e78c-4635-b24b-eabe680a55ae",
+			"position": {
+				"x": 414.2538839739618,
+				"y": 139.06573123854895
+			},
+			"selected": false,
+			"type": "dataset"
+		},
+		{
+			"id": "9788eb8d-ea88-4c60-bacc-1a23efd2f5e1",
+			"position": {
+				"x": 396.73078428120414,
+				"y": 264.39534939311926
+			},
+			"selected": false,
+			"type": "dataset"
 		}
 	],
-	"timestamp": 1763615595169,
+	"timestamp": 1763667189171,
 	"viewport": {
-		"x": -368.88851184852206,
-		"y": 172.28825474964583,
+		"x": -230.88851184852183,
+		"y": 236.28825474964583,
 		"zoom": 0.8097167836794356
 	}
 }
