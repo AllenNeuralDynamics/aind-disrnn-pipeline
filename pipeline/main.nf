@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:94db1b1e5f3f9f67120299a13d00b6fd338ca534e4dd38084789cf3b39be2342
+// hash:sha256:45981d28042887ee83c4234af79b2cf778c9585d8ef32c40f52225e84440c24c
 
 // capsule - aind-disrnn-dispatcher
 process capsule_aind_disrnn_dispatcher_1 {
@@ -32,7 +32,7 @@ process capsule_aind_disrnn_dispatcher_1 {
 	else
 		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7242130.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 72fec70cecfb8e3cb1bf4064c2be1dc617501fca --quiet
+	git -C capsule-repo checkout 6ed055744033db3162098442edae34fc200f77f4 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -48,7 +48,7 @@ process capsule_aind_disrnn_dispatcher_1 {
 // capsule - aind-disrnn-wrapper
 process capsule_aind_disrnn_wrapper_2 {
 	tag 'capsule-5421561'
-	container "$REGISTRY_HOST/capsule/0d294d22-89c8-463b-821b-9690a18833bd:1fefef25994fb7dfb862613018015a75"
+	container "$REGISTRY_HOST/capsule/0d294d22-89c8-463b-821b-9690a18833bd:bfef156bf37a612992987c8d2982a501"
 
 	cpus 16
 	memory '61 GB'
@@ -84,7 +84,7 @@ process capsule_aind_disrnn_wrapper_2 {
 	else
 		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5421561.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 1ed3a5d25629b048d7b5f8811978d3b1571e23de --quiet
+	git -C capsule-repo checkout caf852bfaff476605cfec86b035ea19d2f8e59c2 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 

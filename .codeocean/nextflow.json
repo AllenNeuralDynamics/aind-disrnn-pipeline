@@ -7,7 +7,7 @@
 				"id": "3dcc1e97-6f2c-44bc-8b0e-4b715559b4a4",
 				"name": "aind-disrnn-dispatcher",
 				"slug": "7242130",
-				"commit": "72fec70cecfb8e3cb1bf4064c2be1dc617501fca",
+				"commit": "6ed055744033db3162098442edae34fc200f77f4",
 				"image_tag": "efbcdd4123fe89272ae85b6c612d292d",
 				"app_panel": true
 			},
@@ -22,8 +22,8 @@
 				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
 				"name": "aind-disrnn-wrapper",
 				"slug": "5421561",
-				"commit": "1ed3a5d25629b048d7b5f8811978d3b1571e23de",
-				"image_tag": "1fefef25994fb7dfb862613018015a75"
+				"commit": "caf852bfaff476605cfec86b035ea19d2f8e59c2",
+				"image_tag": "bfef156bf37a612992987c8d2982a501"
 			},
 			"resources": {
 				"cpus": 16,
