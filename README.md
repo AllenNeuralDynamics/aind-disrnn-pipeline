@@ -30,3 +30,32 @@ Hit "Run", and you'll get results in CO asset (computation id `c4808a41-d686-445
 Logging and visualization in W&B
 
 <img width="2486" height="1052" alt="image" src="https://github.com/user-attachments/assets/cbee0f0a-358d-469e-88f0-c5d3fd038ea9" />
+
+## Switching between CPU and GPU machines for the wrapper
+Based on some [benchmark tests](https://wandb.ai/AIND-disRNN/han_cpu_gpu_test/reports/CPU-GPU-and-reproducibility--VmlldzoxNTEyNjg1OQ), we decided to use CPU machine for the wrapper by default.
+
+To migrate from GPU to CPU, you should pull the latest wrapper and pipeline after [this PR](https://github.com/AllenNeuralDynamics/aind-disrnn-wrapper/pull/15) and [this PR](https://github.com/AllenNeuralDynamics/aind-disrnn-pipeline/pull/7) are merged.
+
+If you want to switch between CPU/GPU machines in the future, follow these steps:
+1. In the [DockerFile](https://github.com/AllenNeuralDynamics/aind-disrnn-wrapper/blob/d6ea4b135687edbd83b2037e165534c56d95f65a/environment/Dockerfile#L4-L10) of the wrapper capsule, uncomment the correct base image and jax version. 
+```python
+# --- Base image and Jax for CPU (preferred) ---
+FROM $REGISTRY_HOST/codeocean/mambaforge3:24.5.0-0-python3.12.4-ubuntu22.04
+ARG JAX_PKG="jax==0.6.1"
+
+# --- Base image and Jax for GPU ---
+# FROM $REGISTRY_HOST/codeocean/pytorch:2.4.0-cuda12.4.0-mambaforge24.5.0-0-python3.12.4-ubuntu22.04
+# ARG JAX_PKG="jax[cuda12]==0.6.1"
+```
+2. In the pipeline, you should also check the machine resources. <br>
+   <img width="300" alt="image" src="https://github.com/user-attachments/assets/14f73c2a-aa29-4a42-86a7-90c95022c1cb" />  <img width="500" alt="image" src="https://github.com/user-attachments/assets/8ff56a9d-6f03-4faa-adef-464377075725" /><br>
+   For example, if you are using CPU machines, you should not see a "GPU" option there, and vice versa.
+   
+   However, there seems to be a bug that CO cannot automatically update the "Resources" field after you change the DockerFile of the capsule. A workaround is to add the same wrapper capsule to the pipeline like this<br>
+   <img width="206" height="248" alt="image" src="https://github.com/user-attachments/assets/4d14928d-a680-470d-a03e-95bee8a4ec24" />   <img width="600" alt="image" src="https://github.com/user-attachments/assets/2734cfcd-bc59-4f49-ba2f-b095ba1106a8" />
+
+   and it somehow forces CO to rethink whether it will need a GPU based on the DockerFile. Once this is done, you can remove the dummy wrapper capsule.
+
+3. You'll need to do a Reproducible Run of the wrapper before you're able to trigger the pipeline with the new CPU/GPU setting.
+
+

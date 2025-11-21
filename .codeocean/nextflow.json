@@ -22,13 +22,12 @@
 				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
 				"name": "aind-disrnn-wrapper",
 				"slug": "5421561",
-				"commit": "caf852bfaff476605cfec86b035ea19d2f8e59c2",
-				"image_tag": "bfef156bf37a612992987c8d2982a501"
+				"commit": "d6ea4b135687edbd83b2037e165534c56d95f65a",
+				"image_tag": "8a502b7f8168ebfd9adae94fb77dca50"
 			},
 			"resources": {
-				"cpus": 16,
-				"memory": 61,
-				"gpus": 1
+				"cpus": 1,
+				"memory": 32
 			},
 			"inputs": [
 				{

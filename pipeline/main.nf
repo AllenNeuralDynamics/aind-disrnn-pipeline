@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:45981d28042887ee83c4234af79b2cf778c9585d8ef32c40f52225e84440c24c
+// hash:sha256:e29f613cfb8e527ce973e2b4714d9cc3f3d42c535a57c2f36cd26e547a15b64a
 
 // capsule - aind-disrnn-dispatcher
 process capsule_aind_disrnn_dispatcher_1 {
@@ -48,12 +48,10 @@ process capsule_aind_disrnn_dispatcher_1 {
 // capsule - aind-disrnn-wrapper
 process capsule_aind_disrnn_wrapper_2 {
 	tag 'capsule-5421561'
-	container "$REGISTRY_HOST/capsule/0d294d22-89c8-463b-821b-9690a18833bd:bfef156bf37a612992987c8d2982a501"
+	container "$REGISTRY_HOST/capsule/0d294d22-89c8-463b-821b-9690a18833bd:8a502b7f8168ebfd9adae94fb77dca50"
 
-	cpus 16
-	memory '61 GB'
-	accelerator 1
-	label 'gpu'
+	cpus 1
+	memory '30 GB'
 
 	publishDir "$RESULTS_PATH/$index", saveAs: { filename -> new File(filename).getName() }
 
@@ -70,8 +68,8 @@ process capsule_aind_disrnn_wrapper_2 {
 	set -e
 
 	export CO_CAPSULE_ID=0d294d22-89c8-463b-821b-9690a18833bd
-	export CO_CPUS=16
-	export CO_MEMORY=65498251264
+	export CO_CPUS=1
+	export CO_MEMORY=32212254720
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -84,7 +82,7 @@ process capsule_aind_disrnn_wrapper_2 {
 	else
 		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5421561.git" capsule-repo
 	fi
-	git -C capsule-repo checkout caf852bfaff476605cfec86b035ea19d2f8e59c2 --quiet
+	git -C capsule-repo checkout d6ea4b135687edbd83b2037e165534c56d95f65a --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
