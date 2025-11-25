@@ -2,13 +2,11 @@
 	"version": 2,
 	"processes": [
 		{
-			"name": "capsule_aind_disrnn_dispatcher_1",
+			"name": "capsule_aind_disrnn_dispatcher_pck_duplicate_1",
 			"capsule": {
-				"id": "3dcc1e97-6f2c-44bc-8b0e-4b715559b4a4",
-				"name": "aind-disrnn-dispatcher",
-				"slug": "7242130",
-				"commit": "6ed055744033db3162098442edae34fc200f77f4",
-				"image_tag": "efbcdd4123fe89272ae85b6c612d292d",
+				"id": "f25e57f3-3736-4866-b03b-722382be4a04",
+				"name": "aind-disrnn-dispatcher-PCK_duplicate",
+				"slug": "8081844",
 				"app_panel": true
 			},
 			"resources": {
@@ -17,31 +15,28 @@
 			}
 		},
 		{
-			"name": "capsule_aind_disrnn_wrapper_2",
+			"name": "capsule_aind_disrnn_wrapper_pck_duplicate_2",
 			"capsule": {
-				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
-				"name": "aind-disrnn-wrapper",
-				"slug": "5421561",
-				"commit": "caf852bfaff476605cfec86b035ea19d2f8e59c2",
-				"image_tag": "bfef156bf37a612992987c8d2982a501"
+				"id": "38d91e94-fb45-4fe7-8c72-abc09b219cb0",
+				"name": "aind-disrnn-wrapper-PCK_duplicate",
+				"slug": "0307129"
 			},
 			"resources": {
-				"cpus": 16,
-				"memory": 61,
-				"gpus": 1
+				"cpus": 1,
+				"memory": 8
 			},
 			"inputs": [
 				{
 					"id": "JOn5GHxX3QOGkW5e",
-					"source_id": "capsule_aind_disrnn_dispatcher_1",
+					"source_id": "capsule_aind_disrnn_dispatcher_pck_duplicate_1",
 					"type": "capsule",
-					"name": "aind-disrnn-dispatcher",
+					"name": "aind-disrnn-dispatcher-PCK_duplicate",
 					"target_path": "jobs",
 					"flatten": true
 				}
 			],
 			"results": {
-				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
+				"id": "38d91e94-fb45-4fe7-8c72-abc09b219cb0",
 				"sequence_folders": true
 			}
 		}

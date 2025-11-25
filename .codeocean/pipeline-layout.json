@@ -1,13 +1,13 @@
 {
 	"edges": [
 		{
-			"id": "xy-edge__capsule_aind_disrnn_dispatcher_1-capsule_aind_disrnn_wrapper_2",
-			"source": "capsule_aind_disrnn_dispatcher_1",
-			"target": "capsule_aind_disrnn_wrapper_2"
+			"id": "xy-edge__capsule_aind_disrnn_dispatcher_pck_duplicate_1-capsule_aind_disrnn_wrapper_pck_duplicate_2",
+			"source": "capsule_aind_disrnn_dispatcher_pck_duplicate_1",
+			"target": "capsule_aind_disrnn_wrapper_pck_duplicate_2"
 		},
 		{
-			"id": "xy-edge__capsule_aind_disrnn_wrapper_2-results",
-			"source": "capsule_aind_disrnn_wrapper_2",
+			"id": "xy-edge__capsule_aind_disrnn_wrapper_pck_duplicate_2-results",
+			"source": "capsule_aind_disrnn_wrapper_pck_duplicate_2",
 			"target": "results"
 		}
 	],
@@ -23,33 +23,28 @@
 		},
 		{
 			"data": {
-				"capsule_id": "3dcc1e97-6f2c-44bc-8b0e-4b715559b4a4"
+				"capsule_id": "f25e57f3-3736-4866-b03b-722382be4a04"
 			},
-			"id": "capsule_aind_disrnn_dispatcher_1",
+			"id": "capsule_aind_disrnn_dispatcher_pck_duplicate_1",
 			"position": {
 				"x": 835.3792299976717,
 				"y": -95.87193069512207
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
 			"data": {
-				"capsule_id": "0d294d22-89c8-463b-821b-9690a18833bd"
+				"capsule_id": "38d91e94-fb45-4fe7-8c72-abc09b219cb0"
 			},
-			"id": "capsule_aind_disrnn_wrapper_2",
+			"id": "capsule_aind_disrnn_wrapper_pck_duplicate_2",
 			"position": {
 				"x": 839.1970360134272,
 				"y": 255.98730755351602
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1763615595169,
-	"viewport": {
-		"x": -368.88851184852206,
-		"y": 172.28825474964583,
-		"zoom": 0.8097167836794356
-	}
+	"timestamp": 1764030628015
 }

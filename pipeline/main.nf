@@ -1,23 +1,23 @@
 #!/usr/bin/env nextflow
-// hash:sha256:45981d28042887ee83c4234af79b2cf778c9585d8ef32c40f52225e84440c24c
+// hash:sha256:9246211a165fbbfcf5a28658d465765d98c48f99099384e22ad74170a1df521c
 
-// capsule - aind-disrnn-dispatcher
-process capsule_aind_disrnn_dispatcher_1 {
-	tag 'capsule-7242130'
-	container "$REGISTRY_HOST/capsule/3dcc1e97-6f2c-44bc-8b0e-4b715559b4a4:efbcdd4123fe89272ae85b6c612d292d"
+// capsule - aind-disrnn-dispatcher-PCK_duplicate
+process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
+	tag 'capsule-8081844'
+	container "$REGISTRY_HOST/capsule/f25e57f3-3736-4866-b03b-722382be4a04"
 
 	cpus 1
 	memory '7.5 GB'
 
 	output:
-	path 'capsule/results/*', emit: to_capsule_aind_disrnn_wrapper_2_1
+	path 'capsule/results/*', emit: to_capsule_aind_disrnn_wrapper_pck_duplicate_2_1
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=3dcc1e97-6f2c-44bc-8b0e-4b715559b4a4
+	export CO_CAPSULE_ID=f25e57f3-3736-4866-b03b-722382be4a04
 	export CO_CPUS=1
 	export CO_MEMORY=8053063680
 
@@ -28,32 +28,29 @@ process capsule_aind_disrnn_dispatcher_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7242130.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8081844.git" capsule-repo
 	else
-		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7242130.git" capsule-repo
+		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8081844.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 6ed055744033db3162098442edae34fc200f77f4 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_disrnn_dispatcher_1_args}
+	./run ${params.capsule_aind_disrnn_dispatcher_pck_duplicate_1_args}
 
 	echo "[${task.tag}] completed!"
 	"""
 }
 
-// capsule - aind-disrnn-wrapper
-process capsule_aind_disrnn_wrapper_2 {
-	tag 'capsule-5421561'
-	container "$REGISTRY_HOST/capsule/0d294d22-89c8-463b-821b-9690a18833bd:bfef156bf37a612992987c8d2982a501"
+// capsule - aind-disrnn-wrapper-PCK_duplicate
+process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
+	tag 'capsule-0307129'
+	container "$REGISTRY_HOST/capsule/38d91e94-fb45-4fe7-8c72-abc09b219cb0"
 
-	cpus 16
-	memory '61 GB'
-	accelerator 1
-	label 'gpu'
+	cpus 1
+	memory '7.5 GB'
 
 	publishDir "$RESULTS_PATH/$index", saveAs: { filename -> new File(filename).getName() }
 
@@ -69,9 +66,9 @@ process capsule_aind_disrnn_wrapper_2 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=0d294d22-89c8-463b-821b-9690a18833bd
-	export CO_CPUS=16
-	export CO_MEMORY=65498251264
+	export CO_CAPSULE_ID=38d91e94-fb45-4fe7-8c72-abc09b219cb0
+	export CO_CPUS=1
+	export CO_MEMORY=8053063680
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -80,11 +77,10 @@ process capsule_aind_disrnn_wrapper_2 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5421561.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0307129.git" capsule-repo
 	else
-		git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5421561.git" capsule-repo
+		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0307129.git" capsule-repo
 	fi
-	git -C capsule-repo checkout caf852bfaff476605cfec86b035ea19d2f8e59c2 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -102,6 +98,6 @@ workflow {
 	index = Channel.of(1..100000)
 
 	// run processes
-	capsule_aind_disrnn_dispatcher_1()
-	capsule_aind_disrnn_wrapper_2(capsule_aind_disrnn_dispatcher_1.out.to_capsule_aind_disrnn_wrapper_2_1.flatten(), index)
+	capsule_aind_disrnn_dispatcher_pck_duplicate_1()
+	capsule_aind_disrnn_wrapper_pck_duplicate_2(capsule_aind_disrnn_dispatcher_pck_duplicate_1.out.to_capsule_aind_disrnn_wrapper_pck_duplicate_2_1.flatten(), index)
 }
