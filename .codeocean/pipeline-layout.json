@@ -18,7 +18,7 @@
 				"x": 885.0680292404851,
 				"y": 606.8114190203914
 			},
-			"selected": true,
+			"selected": false,
 			"type": "results"
 		},
 		{
@@ -27,8 +27,8 @@
 			},
 			"id": "capsule_aind_disrnn_dispatcher_pck_duplicate_1",
 			"position": {
-				"x": 835.3792299976717,
-				"y": -95.87193069512207
+				"x": 829.6927806954158,
+				"y": -223.24839506565834
 			},
 			"selected": true,
 			"type": "capsule"
@@ -42,9 +42,14 @@
 				"x": 839.1970360134272,
 				"y": 255.98730755351602
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1764030628015
+	"timestamp": 1764031945989,
+	"viewport": {
+		"x": -356.1261084028898,
+		"y": 450.4707280140095,
+		"zoom": 0.8792833162191851
+	}
 }
