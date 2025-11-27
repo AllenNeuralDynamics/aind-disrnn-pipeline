@@ -7,8 +7,6 @@
 				"id": "f25e57f3-3736-4866-b03b-722382be4a04",
 				"name": "aind-disrnn-dispatcher-PCK_duplicate",
 				"slug": "8081844",
-				"commit": "953fcb3457436e54bfbe36a7698c93cd82cf0ce0",
-				"image_tag": "efbcdd4123fe89272ae85b6c612d292d",
 				"app_panel": true
 			},
 			"resources": {
@@ -21,9 +19,7 @@
 			"capsule": {
 				"id": "38d91e94-fb45-4fe7-8c72-abc09b219cb0",
 				"name": "aind-disrnn-wrapper-PCK_duplicate",
-				"slug": "0307129",
-				"commit": "bebe4eaf88de620e8423fbd536ad4b8bc5b598d9",
-				"image_tag": "8a502b7f8168ebfd9adae94fb77dca50"
+				"slug": "0307129"
 			},
 			"resources": {
 				"cpus": 1,
