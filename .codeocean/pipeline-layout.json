@@ -1,15 +1,13 @@
 {
 	"edges": [
 		{
-			"id": "xy-edge__capsule_aind_disrnn_dispatcher_1-capsule_aind_disrnn_wrapper_2",
-			"selected": false,
+			"id": "xy-edge__capsule_aind_disrnn_dispatcher_1-capsule_aind_disrnn_wrapper_alex_2",
 			"source": "capsule_aind_disrnn_dispatcher_1",
-			"target": "capsule_aind_disrnn_wrapper_2"
+			"target": "capsule_aind_disrnn_wrapper_alex_2"
 		},
 		{
-			"id": "xy-edge__capsule_aind_disrnn_wrapper_2-results",
-			"selected": false,
-			"source": "capsule_aind_disrnn_wrapper_2",
+			"id": "xy-edge__capsule_aind_disrnn_wrapper_alex_2-results",
+			"source": "capsule_aind_disrnn_wrapper_alex_2",
 			"target": "results"
 		}
 	],
@@ -37,9 +35,9 @@
 		},
 		{
 			"data": {
-				"capsule_id": "0d294d22-89c8-463b-821b-9690a18833bd"
+				"capsule_id": "99f31ba3-9b60-4b14-b5fe-d5b1d5218969"
 			},
-			"id": "capsule_aind_disrnn_wrapper_2",
+			"id": "capsule_aind_disrnn_wrapper_alex_2",
 			"position": {
 				"x": 835.9571858102304,
 				"y": 263.5469580276421
@@ -48,10 +46,5 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1763698103774,
-	"viewport": {
-		"x": -528.6204464116428,
-		"y": 101.7744105581059,
-		"zoom": 0.9259687367767037
-	}
+	"timestamp": 1768515962140
 }

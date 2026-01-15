@@ -17,17 +17,15 @@
 			}
 		},
 		{
-			"name": "capsule_aind_disrnn_wrapper_2",
+			"name": "capsule_aind_disrnn_wrapper_alex_2",
 			"capsule": {
-				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
-				"name": "aind-disrnn-wrapper",
-				"slug": "5421561",
-				"commit": "d6ea4b135687edbd83b2037e165534c56d95f65a",
-				"image_tag": "8a502b7f8168ebfd9adae94fb77dca50"
+				"id": "99f31ba3-9b60-4b14-b5fe-d5b1d5218969",
+				"name": "aind-disrnn-wrapper-alex",
+				"slug": "7263136"
 			},
 			"resources": {
 				"cpus": 1,
-				"memory": 32
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -40,7 +38,7 @@
 				}
 			],
 			"results": {
-				"id": "0d294d22-89c8-463b-821b-9690a18833bd",
+				"id": "99f31ba3-9b60-4b14-b5fe-d5b1d5218969",
 				"sequence_folders": true
 			}
 		}
