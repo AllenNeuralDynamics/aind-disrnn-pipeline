@@ -16,7 +16,10 @@ You'll need a W&B API key to push your results to W&B:
    <img width="700" alt="image" src="https://github.com/user-attachments/assets/f3f587b7-cacd-483f-817b-0d7e7a10c6a6" />
 4. Then attach the key to this pipeline: `Pipeline settings - Credentials` <br>
    <img width="500" alt="image" src="https://github.com/user-attachments/assets/8ce8365a-24ca-4729-ba52-6c017da097fe" />
-5. You may also need to attach your Code Ocean API on the same page.
+5. Click the three dots - `Set Environment Variable Names` and change the env variable name to "WANDB_API_KEY"
+   <img width="539" height="146" alt="image" src="https://github.com/user-attachments/assets/0c100f0f-4d4e-4f46-876d-4a4b614b5c09" />
+   <img width="673" height="230" alt="image" src="https://github.com/user-attachments/assets/55da89da-774d-4c81-acb3-3005e9f25ca1" />
+6. You will also need to attach your Code Ocean API on the same page.
 
 ## Usage
 In the [pipeline](https://codeocean.allenneuraldynamics.org/capsule/7873787/tree), enter the Hydra CLI override in the app panel, for example<br>`-m model.penalties.beta=0.0001,0.001,0.01 model.training.n_steps=100 model.training.n_warmup_steps=50` 
