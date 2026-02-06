@@ -14,12 +14,19 @@ You'll need a W&B API key to push your results to W&B:
 2. Copy your API key from `W&B - Account - API key`
 3. First add your key to Code Ocean account: `Account - User Secrets - Add Secret - Custom key` <br>
    <img width="700" alt="image" src="https://github.com/user-attachments/assets/f3f587b7-cacd-483f-817b-0d7e7a10c6a6" />
-4. Then attach the key to this pipeline: `Pipeline settings - Credentials` <br>
-   <img width="500" alt="image" src="https://github.com/user-attachments/assets/8ce8365a-24ca-4729-ba52-6c017da097fe" />
+4. Then attach the key to the wrapper capsule: `Capsule Settings - Credentials` <br>
+   <img width="400" height="161" alt="image" src="https://github.com/user-attachments/assets/8823c5cc-7a9b-44cd-be17-322d29430115" />
+   
+   <img width="500" height="546" alt="image" src="https://github.com/user-attachments/assets/0d96b2f7-d528-49a9-b9ed-c5ede970de0e" />
+
 5. Click the three dots - `Set Environment Variable Names` and change the env variable name to "WANDB_API_KEY"
    <img width="539" height="146" alt="image" src="https://github.com/user-attachments/assets/0c100f0f-4d4e-4f46-876d-4a4b614b5c09" />
    <img width="673" height="230" alt="image" src="https://github.com/user-attachments/assets/55da89da-774d-4c81-acb3-3005e9f25ca1" />
 6. You will also need to attach your Code Ocean API on the same page.
+7. Now in the `Pipeline Settings - Credentials`, you should see both credentials have been attached to the wrapper capsule in the pipeline.
+   
+   <img width="500" height="683" alt="image" src="https://github.com/user-attachments/assets/111afa33-0759-432c-90fe-7d8e6d4c3daa" />
+
 
 ## Usage
 In the [pipeline](https://codeocean.allenneuraldynamics.org/capsule/7873787/tree), enter the Hydra CLI override in the app panel, for example<br>`-m model.penalties.beta=0.0001,0.001,0.01 model.training.n_steps=100 model.training.n_warmup_steps=50` 
