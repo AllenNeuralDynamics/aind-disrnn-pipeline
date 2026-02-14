@@ -22,8 +22,8 @@
 				"id": "38d91e94-fb45-4fe7-8c72-abc09b219cb0",
 				"name": "aind-disrnn-wrapper-PCK_duplicate",
 				"slug": "0307129",
-				"commit": "a0766e2bc2b89bef8d5e8fe7c043e0a1e5be5d1e",
-				"image_tag": "8a502b7f8168ebfd9adae94fb77dca50"
+				"commit": "38af0dd71d6a34782ffdaabae7ef4b5ba73c5ff6",
+				"image_tag": "7566e5ebeb151a8140533093a6d2ebe1"
 			},
 			"resources": {
 				"cpus": 1,
