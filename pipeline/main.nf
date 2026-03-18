@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:ba3271e9e790a43dbfbd369b7c3498e1bebf974828631dc88b3dc76dae758cb6
+// hash:sha256:612fde1704729d79accaa5f120436936194a2f51696141d33081cb0643fd1efb
 
 // capsule - aind-disrnn-dispatcher-PCK_duplicate
 process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
@@ -32,7 +32,7 @@ process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8081844.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 953fcb3457436e54bfbe36a7698c93cd82cf0ce0 --quiet
+	git -C capsule-repo checkout 62f624bf614fa5262ee8980b684b5f8f2ab27f7b --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -48,10 +48,10 @@ process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
 // capsule - aind-disrnn-wrapper-PCK_duplicate
 process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	tag 'capsule-0307129'
-	container "$REGISTRY_HOST/capsule/38d91e94-fb45-4fe7-8c72-abc09b219cb0:7566e5ebeb151a8140533093a6d2ebe1"
+	container "$REGISTRY_HOST/capsule/38d91e94-fb45-4fe7-8c72-abc09b219cb0:c165165a8899fb6bac4f2cff6577034d"
 
-	cpus 1
-	memory '7.5 GB'
+	cpus 16
+	memory '30 GB'
 
 	publishDir "$RESULTS_PATH/$index", saveAs: { filename -> new File(filename).getName() }
 
@@ -68,13 +68,19 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	set -e
 
 	export CO_CAPSULE_ID=38d91e94-fb45-4fe7-8c72-abc09b219cb0
-	export CO_CPUS=1
-	export CO_MEMORY=8053063680
+	export CO_CPUS=16
+	export CO_MEMORY=32212254720
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	ln -s "/tmp/data/mice_snapshot_4" "capsule/data/mice_snapshot_4" # id: 5beb1741-1285-46dc-bbeb-64c29a4ad158
+	ln -s "/tmp/data/mice_snapshot_3" "capsule/data/mice_snapshot_3" # id: c1b3e0ee-baff-4cf3-9e62-0790fb2855bb
+	ln -s "/tmp/data/mice_snapshot_2" "capsule/data/mice_snapshot_2" # id: 630a1fe9-2df1-44a5-996a-432a6d099e04
+	ln -s "/tmp/data/mice_snapshot_1" "capsule/data/mice_snapshot_1" # id: ccf1dc32-9d83-425e-ae6d-70e183c58778
+	ln -s "/tmp/data/mice_snapshot" "capsule/data/mice_snapshot" # id: 66778003-ad33-41ae-a345-dd4467012e42
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
@@ -82,7 +88,7 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0307129.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 38af0dd71d6a34782ffdaabae7ef4b5ba73c5ff6 --quiet
+	git -C capsule-repo checkout e3c32f99535f538aa1a2206dc34da7cab206a1dc --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
