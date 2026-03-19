@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:e6aa00853acaa443af80c248a9827d1b8b1ac83df53503cac7b28791717aaf1d
+// hash:sha256:2a249d7f57bdfe25c2f2b55f21401e50b2fd3d737871b69ba74cde48e6362cf5
 
 // capsule - aind-disrnn-dispatcher-PCK_duplicate
 process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
@@ -50,8 +50,8 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	tag 'capsule-0307129'
 	container "$REGISTRY_HOST/capsule/38d91e94-fb45-4fe7-8c72-abc09b219cb0:c165165a8899fb6bac4f2cff6577034d"
 
-	cpus 16
-	memory '30 GB'
+	cpus 32
+	memory '60 GB'
 
 	publishDir "$RESULTS_PATH/$index", saveAs: { filename -> new File(filename).getName() }
 
@@ -68,8 +68,8 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	set -e
 
 	export CO_CAPSULE_ID=38d91e94-fb45-4fe7-8c72-abc09b219cb0
-	export CO_CPUS=16
-	export CO_MEMORY=32212254720
+	export CO_CPUS=32
+	export CO_MEMORY=64424509440
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data

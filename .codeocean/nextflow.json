@@ -26,8 +26,8 @@
 				"image_tag": "c165165a8899fb6bac4f2cff6577034d"
 			},
 			"resources": {
-				"cpus": 16,
-				"memory": 32
+				"cpus": 32,
+				"memory": 64
 			},
 			"inputs": [
 				{
