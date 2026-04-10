@@ -22,7 +22,7 @@
 				"id": "38d91e94-fb45-4fe7-8c72-abc09b219cb0",
 				"name": "aind-disrnn-wrapper-PCK_duplicate",
 				"slug": "0307129",
-				"commit": "707bbea1c297a3846ec28b001619ad6100a23268",
+				"commit": "a95ff832c53f3b98177e235d530109b419aca53f",
 				"image_tag": "c165165a8899fb6bac4f2cff6577034d"
 			},
 			"resources": {
