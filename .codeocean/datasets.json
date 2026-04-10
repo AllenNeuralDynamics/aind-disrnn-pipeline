@@ -2,6 +2,10 @@
 	"version": 1,
 	"attached_datasets": [
 		{
+			"id": "41983b7d-5708-42a1-9862-4bef8b11da1f",
+			"mount": "DF_data_driven_modeling"
+		},
+		{
 			"id": "5beb1741-1285-46dc-bbeb-64c29a4ad158",
 			"mount": "mice_snapshot_4"
 		},

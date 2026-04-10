@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:2a249d7f57bdfe25c2f2b55f21401e50b2fd3d737871b69ba74cde48e6362cf5
+// hash:sha256:5948c5f5587428c272f4b52f8379ba5406671e3298c6a853a85277008f3d4c39
 
 // capsule - aind-disrnn-dispatcher-PCK_duplicate
 process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
@@ -10,7 +10,7 @@ process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
 	memory '7.5 GB'
 
 	output:
-	path 'capsule/results/*', emit: to_capsule_aind_disrnn_wrapper_pck_duplicate_2_1
+	path 'capsule/results/*', emit: to_capsule_aind_disrnn_wrapper_pck_duplicate_2_2
 
 	script:
 	"""
@@ -32,7 +32,7 @@ process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8081844.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 80e0b1dad6eab2f20a7c5e9eaf4e1172454f9bb2 --quiet
+	git -C capsule-repo checkout 3f257f13da2d958caf5e1ee3a3c5cc5149049fb9 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -50,12 +50,13 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	tag 'capsule-0307129'
 	container "$REGISTRY_HOST/capsule/38d91e94-fb45-4fe7-8c72-abc09b219cb0:c165165a8899fb6bac4f2cff6577034d"
 
-	cpus 32
-	memory '60 GB'
+	cpus 8
+	memory '30 GB'
 
 	publishDir "$RESULTS_PATH/$index", saveAs: { filename -> new File(filename).getName() }
 
 	input:
+	val path1
 	path 'capsule/data/jobs'
 	val index
 
@@ -68,14 +69,15 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	set -e
 
 	export CO_CAPSULE_ID=38d91e94-fb45-4fe7-8c72-abc09b219cb0
-	export CO_CPUS=32
-	export CO_MEMORY=64424509440
+	export CO_CPUS=8
+	export CO_MEMORY=32212254720
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
+	ln -s "/tmp/data/DF_data_driven_modeling/$path1" "capsule/data/$path1" # id: 41983b7d-5708-42a1-9862-4bef8b11da1f
 	ln -s "/tmp/data/mice_snapshot_4" "capsule/data/mice_snapshot_4" # id: 5beb1741-1285-46dc-bbeb-64c29a4ad158
 	ln -s "/tmp/data/mice_snapshot_3" "capsule/data/mice_snapshot_3" # id: c1b3e0ee-baff-4cf3-9e62-0790fb2855bb
 	ln -s "/tmp/data/mice_snapshot_2" "capsule/data/mice_snapshot_2" # id: 630a1fe9-2df1-44a5-996a-432a6d099e04
@@ -88,7 +90,7 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0307129.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 0d371c6aa199c1ed56d80c66cf9e30fdddab43ae --quiet
+	git -C capsule-repo checkout 1769e42366951b9830e88e090283ceb87ab77d7c --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -103,9 +105,10 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 
 workflow {
 	// input data
+	df_data_driven_modeling_to_aind_disrnn_wrapper_pck_duplicate_1 = Channel.fromPath("../data/DF_data_driven_modeling/*", type: 'any', relative: true)
 	index = Channel.of(1..100000)
 
 	// run processes
 	capsule_aind_disrnn_dispatcher_pck_duplicate_1()
-	capsule_aind_disrnn_wrapper_pck_duplicate_2(capsule_aind_disrnn_dispatcher_pck_duplicate_1.out.to_capsule_aind_disrnn_wrapper_pck_duplicate_2_1.flatten(), index)
+	capsule_aind_disrnn_wrapper_pck_duplicate_2(df_data_driven_modeling_to_aind_disrnn_wrapper_pck_duplicate_1, capsule_aind_disrnn_dispatcher_pck_duplicate_1.out.to_capsule_aind_disrnn_wrapper_pck_duplicate_2_2.flatten(), index)
 }
