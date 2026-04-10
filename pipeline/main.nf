@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:5948c5f5587428c272f4b52f8379ba5406671e3298c6a853a85277008f3d4c39
+// hash:sha256:02d6655fd15b9a0cdb63cf9d805eccbbbb42a5e590dd4a86ab2c79897eec6ea9
 
 // capsule - aind-disrnn-dispatcher-PCK_duplicate
 process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
@@ -32,7 +32,7 @@ process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8081844.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 3f257f13da2d958caf5e1ee3a3c5cc5149049fb9 --quiet
+	git -C capsule-repo checkout a844cf6f0ea55c5bb79051787d19c63407013b64 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -77,7 +77,7 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
-	ln -s "/tmp/data/DF_data_driven_modeling/$path1" "capsule/data/$path1" # id: 41983b7d-5708-42a1-9862-4bef8b11da1f
+	ln -s "/tmp/data/mice_multisubject_train10-gru-260323/$path1" "capsule/data/$path1" # id: 41983b7d-5708-42a1-9862-4bef8b11da1f
 	ln -s "/tmp/data/mice_snapshot_4" "capsule/data/mice_snapshot_4" # id: 5beb1741-1285-46dc-bbeb-64c29a4ad158
 	ln -s "/tmp/data/mice_snapshot_3" "capsule/data/mice_snapshot_3" # id: c1b3e0ee-baff-4cf3-9e62-0790fb2855bb
 	ln -s "/tmp/data/mice_snapshot_2" "capsule/data/mice_snapshot_2" # id: 630a1fe9-2df1-44a5-996a-432a6d099e04
@@ -90,7 +90,7 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0307129.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 1769e42366951b9830e88e090283ceb87ab77d7c --quiet
+	git -C capsule-repo checkout 707bbea1c297a3846ec28b001619ad6100a23268 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -105,10 +105,10 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 
 workflow {
 	// input data
-	df_data_driven_modeling_to_aind_disrnn_wrapper_pck_duplicate_1 = Channel.fromPath("../data/DF_data_driven_modeling/*", type: 'any', relative: true)
+	mice_multisubject_train10_gru_260323_to_aind_disrnn_wrapper_pck_duplicate_1 = Channel.fromPath("../data/mice_multisubject_train10-gru-260323/*", type: 'any', relative: true)
 	index = Channel.of(1..100000)
 
 	// run processes
 	capsule_aind_disrnn_dispatcher_pck_duplicate_1()
-	capsule_aind_disrnn_wrapper_pck_duplicate_2(df_data_driven_modeling_to_aind_disrnn_wrapper_pck_duplicate_1, capsule_aind_disrnn_dispatcher_pck_duplicate_1.out.to_capsule_aind_disrnn_wrapper_pck_duplicate_2_2.flatten(), index)
+	capsule_aind_disrnn_wrapper_pck_duplicate_2(mice_multisubject_train10_gru_260323_to_aind_disrnn_wrapper_pck_duplicate_1, capsule_aind_disrnn_dispatcher_pck_duplicate_1.out.to_capsule_aind_disrnn_wrapper_pck_duplicate_2_2.flatten(), index)
 }
