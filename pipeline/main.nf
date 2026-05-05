@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:f21102d3d1b544030406e4a2d09d7e4632247ee11b260f65a49a4d261b53b963
+// hash:sha256:9430bcf2b8a252d2a5adaa48f783460e96ffc34fa0fee0eeffaea7494b6d65c9
 
 // capsule - aind-disrnn-dispatcher-PCK_duplicate
 process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
@@ -32,7 +32,7 @@ process capsule_aind_disrnn_dispatcher_pck_duplicate_1 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8081844.git" capsule-repo
 	fi
-	git -C capsule-repo checkout a844cf6f0ea55c5bb79051787d19c63407013b64 --quiet
+	git -C capsule-repo checkout bc506c71ef28acf04f678ab79d815832e42e9c96 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -90,7 +90,7 @@ process capsule_aind_disrnn_wrapper_pck_duplicate_2 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0307129.git" capsule-repo
 	fi
-	git -C capsule-repo checkout a95ff832c53f3b98177e235d530109b419aca53f --quiet
+	git -C capsule-repo checkout 69988ff4042831f0ce74f96f36c1b54b6a611181 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
